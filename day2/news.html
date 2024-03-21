@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .flex-box {
+        display: flex;
+        gap: 10px;
+        padding: 10px;
+      }
+      img {
+        width: 200px;
+        border-radius: 5px;
+      }
+      .img-box {
+        flex: 1;
+      }
+      .text-box {
+        flex: 1;
+      }
+      .l-red {
+        border-left: red solid 1px;
+        padding-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="flex-box">
+        <div>
+          <div>
+            <div class="flex-box">
+              <div class="img-box">
+                <img
+                  src="https://imgnews.pstatic.net/image/081/2024/03/21/0003438845_001_20240321151004423.jpg?type=w647"
+                />
+              </div>
+              <div class="text-box">
+                <p>‘수서~동탄 20분’ GTX, 4450원…배차간격 20분 실화?</p>
+                <p>서울신문5분 전</p>
+              </div>
+            </div>
+            <div class="flex-box">
+              <div class="img-box">
+                <img
+                  src="https://imgnews.pstatic.net/image/088/2024/03/21/0000868528_001_20240321151101196.png?type=w647"
+                />
+              </div>
+              <div class="text-box">
+                <p>포스코그룹 장인화 회장의 미래 설계는?…철강위기극</p>
+                <p>매일신문16분 전</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex-box" style="justify-content: space-between">
+            <div class="l-red">
+              <div>코스닥</div>
+              <div>904.29</div>
+              <div
+                style="
+                  padding: 2px;
+                  background-color: rgba(240, 132, 132, 0.1);
+                  color: #eb5b5b;
+                "
+              >
+                +1.44%
+              </div>
+            </div>
+            <div class="l-red">
+              <div>S&P 500</div>
+              <div>5,224,62</div>
+              <div
+                style="
+                  padding: 2px;
+                  background-color: rgba(240, 132, 132, 0.1);
+                  color: #eb5b5b;
+                "
+              >
+                +0.89%
+              </div>
+            </div>
+          </div>
+          <hr />
+          <p>메가스터디의 공단기 인수 ‘불발’… 공정위 “독점화로 수강</p>
+          <p>부동산PF 정상화 펀드 확대 주문…저축·여전사, 내달 2700억 조</p>
+          <p>임종윤 "주주 무시한 한미-OCI 통합…어머니도 몰랐던 불완전거래"</p>
+          <p>오늘의 경제 헤드라인입니다.</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
