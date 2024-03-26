@@ -138,46 +138,53 @@ const box = document.getElementById("box");
 const p = document.createElement("p");
 p.innerHTML = "hello";
 box.append(p);
-const keys = [
-  "rank",
-  "name",
-  "win",
-  "lose",
-  "winLoseDiff",
-  "kill",
-  "death",
-  "assist",
-];
-const tbody = document.getElementById("tbody");
-for (let i = 0; i < teams.length; i++) {
-  const el = teams[i];
-  const tr = document.createElement("tr");
-  const rank = document.createElement("td");
-  rank.innerHTML = `${el.rank} ${el.name}`;
-  tr.append(rank);
-  const win = document.createElement("td");
-  win.innerHTML = el.win;
-  tr.append(win);
-  const lose = document.createElement("td");
-  lose.innerHTML = el.lose;
-  tr.append(lose);
-  const winLoseDiff = document.createElement("td");
-  winLoseDiff.innerHTML = el.winLoseDiff;
-  tr.append(winLoseDiff);
-  const rate = document.createElement("td");
-  rate.innerHTML = Math.floor((el.win / (el.win + el.lose)) * 100) / 100;
-  tr.append(rate);
-  const kda = document.createElement("td");
-  kda.innerHTML = Math.floor(((el.kill + el.assist) / el.death) * 100) / 100;
-  tr.append(kda);
-  const kill = document.createElement("td");
-  kill.innerHTML = el.kill;
-  tr.append(kill);
-  const death = document.createElement("td");
-  death.innerHTML = el.death;
-  tr.append(death);
-  const assist = document.createElement("td");
-  assist.innerHTML = el.assist;
-  tr.append(assist);
-  tbody.append(tr);
-}
+const tbl = document.getElementById("tbl");
+const drawTable = (teams) => {
+  const tbody = document.getElementById("tbody");
+  for (let i = 0; i < teams.length; i++) {
+    const el = teams[i];
+    const tr = document.createElement("tr");
+    const rank = document.createElement("td");
+    rank.innerHTML = `${el.rank} ${el.name}`;
+    tr.append(rank);
+    const win = document.createElement("td");
+    win.innerHTML = el.win;
+    tr.append(win);
+    const lose = document.createElement("td");
+    lose.innerHTML = el.lose;
+    tr.append(lose);
+    const winLoseDiff = document.createElement("td");
+    winLoseDiff.innerHTML = el.winLoseDiff;
+    tr.append(winLoseDiff);
+    const rate = document.createElement("td");
+    rate.innerHTML = Math.floor((el.win / (el.win + el.lose)) * 100) / 100;
+    tr.append(rate);
+    const kda = document.createElement("td");
+    kda.innerHTML = Math.floor(((el.kill + el.assist) / el.death) * 100) / 100;
+    tr.append(kda);
+    const kill = document.createElement("td");
+    kill.innerHTML = el.kill;
+    tr.append(kill);
+    const death = document.createElement("td");
+    death.innerHTML = el.death;
+    tr.append(death);
+    const assist = document.createElement("td");
+    assist.innerHTML = el.assist;
+    tr.append(assist);
+    tbody.append(tr);
+  }
+};
+const removeTable = () => {
+  const tbody = document.getElementById("tbody");
+  tbody.remove();
+  const tmp = document.createElement("tbody");
+  tmp.setAttribute("id", "tbody");
+  tbl.appendChild(tmp);
+};
+
+const tblSort = (key) => {
+  const sortByKey = teams.sort((a, b) => b[key] - a[key]);
+  removeTable();
+  drawTable(sortByKey);
+};
+drawTable(teams);
