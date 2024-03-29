@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Box from "./components/Box";
 import Person from "./components/Person";
+import Boxs from "./components/Boxs";
 // import java.util.List;
 // html 태그를 리턴하는 파일을 jsx
 //                        csr client side render ssr server side render
@@ -10,17 +11,16 @@ import Person from "./components/Person";
 
 function App() {
   //  [변수, set함수] = useState(초기값);
-  const [width, setWidth] = useState(500);
-  const [height, setHeight] = useState(500);
 
+  const [age, setAge] = useState(10);
   return (
     <div className="App">
-      <Person />
-      <input type="range" onChange={(e) => setWidth(e.target.value + "px")} />
-      <input type="range" onChange={(e) => setHeight(e.target.value + "px")} />
-      <Box width={width} height={height} />
-      <Box width={width} height={height} />
-      <Box height={height} width={width}></Box>
+      <input type="number" onChange={(e) => setAge(e.target.value)} />
+      <br />
+      <Person age={age} />
+      <Person age={age} />
+      <Person age={age} />
+      <Boxs />
     </div>
   );
 }
