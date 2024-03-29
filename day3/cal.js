@@ -35,3 +35,28 @@ console.log(cal[5], cal[0] === total, c1 === cal[1]);
 // react : 프로젝트 (백엔드 맛보기 및 예습) F.E, JS 친숙해 지기
 //  REACT-자기팀명-주제-BE
 //  REACT-자기팀명-주제-FE
+// 코스기수-프로젝트회차-팀(조, 진행자)이름-프로젝트명
+// BE05-1st-ㄴㅇㅇㅇ-ㅇㅇㅇㅇ
+// npm -v
+// npm i -g create-react-app
+//  npm create react-app day7
+// Success! Created day7 at C:\html-study\day7
+// Inside that directory, you can run several commands:
+
+// npm start
+//   Starts the development server.
+
+// npm run build
+//   Bundles the app into static files for production.
+
+// npm test
+//   Starts the test runner.
+
+// npm run eject
+//   Removes this tool and copies build dependencies, configuration files
+//   and scripts into the app directory. If you do this, you can’t go back!
+
+// We suggest that you begin by typing:
+
+// cd day7
+// npm start
