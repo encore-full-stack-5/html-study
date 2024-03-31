@@ -1,3 +1,6 @@
+import { useState } from "react";
+import Person from "./Person";
+
 const Persons = () => {
   const [age, setAge] = useState(10);
   return (
