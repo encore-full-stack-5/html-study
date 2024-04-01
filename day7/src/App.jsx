@@ -18,10 +18,10 @@ function App() {
     <div className="App">
       <Counter />
       <hr />
-      <Persons />
+      {/* <Persons />
       <hr />
       <Boxs />
-      <hr />
+      <hr /> */}
     </div>
   );
 }
