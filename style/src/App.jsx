@@ -13,6 +13,8 @@ import "./App.css";
 //  git switch -c emotion
 //  npm i @emotion/css
 //  npm i @emotion/react
+//  git switch main
+//  git switch -c tailwind
 import { css } from "@emotion/css";
 function App() {
   const [color, setColor] = useState("red");
