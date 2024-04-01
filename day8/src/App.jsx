@@ -129,7 +129,15 @@ const keys = [...Object.keys(teams[0])];
 function App() {
   const [search, setSearch] = useState("");
   const [searchKey, setSearchKey] = useState("rank");
-
+  const [tmp, setTmp] = useState([...teams]);
+  const onClickSearch = () => {
+    const te = teams
+      .filter((el) => el[searchKey].toString().includes(search))
+      .sort((a, b) =>
+        searchKey === "rank" ? a.rank - b.rank : b[searchKey] - a[searchKey]
+      );
+    setTmp(te);
+  };
   return (
     <div>
       <select onChange={(e) => setSearchKey(e.target.value)}>
@@ -141,6 +149,7 @@ function App() {
         placeholder="name을 입력해 주세요"
         onChange={(e) => setSearch(e.target.value)}
       />
+      <button onClick={onClickSearch}> search </button>
       <table>
         <thead>
           <tr>
@@ -157,29 +166,22 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          {teams
-            .filter((el) => el[searchKey].toString().includes(search))
-            .sort((a, b) =>
-              searchKey === "rank"
-                ? a.rank - b.rank
-                : b[searchKey] - a[searchKey]
-            )
-            .map((el, i, arr) => (
-              <tr key={i}>
-                <td>{el.rank}</td>
-                <td>{el.name}</td>
-                <td>{el.win}</td>
-                <td>{el.lose}</td>
-                <td>{el.winLoseDiff}</td>
-                <td>{el.rate}</td>
-                <td>
-                  {parseInt(((el.kill + el.assist) / el.death) * 100) / 100}
-                </td>
-                <td>{el.kill}</td>
-                <td>{el.death}</td>
-                <td>{el.assist}</td>
-              </tr>
-            ))}
+          {tmp.map((el, i, arr) => (
+            <tr key={i}>
+              <td>{el.rank}</td>
+              <td>{el.name}</td>
+              <td>{el.win}</td>
+              <td>{el.lose}</td>
+              <td>{el.winLoseDiff}</td>
+              <td>{el.rate}</td>
+              <td>
+                {parseInt(((el.kill + el.assist) / el.death) * 100) / 100}
+              </td>
+              <td>{el.kill}</td>
+              <td>{el.death}</td>
+              <td>{el.assist}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
