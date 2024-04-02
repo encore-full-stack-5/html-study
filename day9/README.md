@@ -1,4 +1,4 @@
-# React + Vite + TAILWIND
+# React + Vite + TAILWIND + recoil
 
 src/atom --> 가장 단위를 만들 것(button)
 src/components --> components
@@ -8,3 +8,5 @@ src/api --> 통신
 src/routes --> route
 src/config --> config
 src/assets --> img
+
+npm install recoil

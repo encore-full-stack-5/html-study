@@ -2,13 +2,18 @@
 // {number: 1, date: time}
 // ,{number: 1, date: new Date().toLocaleString()}
 // ,{number: 1, date: time}
+
+import { useRecoilValue } from "recoil";
+import { countLogState } from "../store/countState";
+
 // ]
 const defaultLogs = [
   { number: 1, date: new Date().toLocaleString() },
   { number: 1, date: new Date().toLocaleString() },
   { number: 1, date: new Date().toLocaleString() },
 ];
-const LogCount = ({ logs = defaultLogs }) => {
+const LogCount = () => {
+  const logs = useRecoilValue(countLogState);
   return (
     <table border={1}>
       <thead>
