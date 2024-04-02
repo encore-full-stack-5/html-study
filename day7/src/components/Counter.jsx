@@ -49,8 +49,7 @@ export default Counter;
 // create react app
 
 // npm create vite@latest
-// style, react ,js
-//  cd day8
-
+// day9
 //  npm i (install)
+
 //  npm run dev
