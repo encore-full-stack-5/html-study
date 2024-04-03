@@ -12,3 +12,5 @@ src/assets --> img
 npm install recoil
 
 192.168.80.4
+
+npm install react-router-dom localforage match-sorter sort-by

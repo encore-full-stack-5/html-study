@@ -4,8 +4,10 @@ import Article from "./atom/Article";
 import Signup from "./pages/Signup";
 import Button from "./atom/Button";
 import Counter from "./pages/Counter";
+//
 function App() {
   const [page, setPage] = useState("count");
+
   return (
     <Article>
       <Button onClick={() => setPage("count")}>카운트</Button>
