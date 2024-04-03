@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { login, register } from "../api/auth";
 import Article from "../atom/Article";
 import Button from "../atom/Button";
@@ -8,11 +9,17 @@ import Label from "../atom/Label";
 // npm i axios
 // fetch
 const Login = () => {
+  const navigate = useNavigate();
   const onSubmit = async (e) => {
     e.preventDefault();
     const name = document.getElementById("name").value;
     const password = document.getElementById("password").value;
     const res = await login({ name, password });
+    if (res.status === 200) {
+      localStorage.setItem("id", res.data.id);
+      navigate("/board");
+    }
+    // Storage cookie localStorage 써야하는 이유
     console.log(res);
   };
 

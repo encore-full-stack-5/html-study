@@ -8,6 +8,7 @@ import Signup from "./pages/Signup.jsx";
 import NavBar from "./components/NavBar.jsx";
 import Layout from "./pages/Layout.jsx";
 import Login from "./pages/Login.jsx";
+import Boards from "./pages/Boards.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Counter /> },
       { path: "/join", element: <Signup /> },
       { path: "/login", element: <Login /> },
+      { path: "/board", element: <Boards /> },
     ],
   },
 ]);

@@ -13,6 +13,9 @@ export const api = async (url, method, body) => {
     url,
     method,
     data: body,
+    headers: {
+      Authorization: localStorage.getItem("id"),
+    },
   });
 
   return res;
