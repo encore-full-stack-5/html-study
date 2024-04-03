@@ -14,8 +14,6 @@ export const api = async (url, method, body) => {
     method,
     data: body,
   });
-  console.log(res);
-  console.log("asdsa");
 
   return res;
 };

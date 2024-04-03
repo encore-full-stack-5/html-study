@@ -6,6 +6,7 @@ const MavBar = () => {
     <nav className="flex">
       <Link to="/">Home</Link>
       <Link to="/join">join</Link>
+      <Link to="/login">login</Link>
     </nav>
   );
 };
